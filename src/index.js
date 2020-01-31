@@ -1,51 +1,54 @@
-import _ from 'lodash';
 import './main.css';
-import {NavBar} from './nav.js';
-import {initHomePage} from './home.js';
-import {initAboutPage} from './about.js';
-import {initContactPage} from './contact.js';
+import NavBar from './nav';
+import initHomePage from './home';
+import initAboutPage from './about';
+import initContactPage from './contact';
 
-function ClearBody(){
-  let pageLoaded = document.querySelector("#content");
-  if (!pageLoaded) {return;}
+function ClearBody() {
+  const pageLoaded = document.querySelector('#content');
+  if (!pageLoaded) { return; }
   pageLoaded.parentNode.removeChild(pageLoaded);
 }
 
-function Initialize(){
+/* eslint-disable no-use-before-define */
+function NavBarButtons() {
+  document.querySelector('#home').onclick = Home;
+  document.querySelector('#about').onclick = About;
+  document.querySelector('#contact').onclick = Contact;
+  //  These lines below give invalid object error...
+  //  Assuming for some reason I can't access the NavBar variables from here.
+  //  ANY SUGGESTIONS?
+
+//  NavBar.homeTab.addEventListener("click", Home);
+//  NavBar.aboutTab.onclick = About;
+//  NavBar.contactTab.onclick = Contact;
+}
+/* eslint-enable no-use-before-define */
+
+function Initialize() {
   NavBar.init();
   document.body.appendChild(NavBar.getContent());
   document.body.appendChild(initHomePage());
   NavBarButtons();
 }
 
-function Home(){
-  console.log("Home");
+function Home() {
   ClearBody();
   NavBar.setTab();
   document.body.appendChild(initHomePage());
 }
 
-function About(){
-  console.log("ABout");
+function About() {
   ClearBody();
-  NavBar.setTab("about");
+  NavBar.setTab('about');
   document.body.appendChild(initAboutPage());
 }
 
-function Contact(){
-  console.log("Contact");
+function Contact() {
   ClearBody();
-  NavBar.setTab("contact")
+  NavBar.setTab('contact');
   document.body.appendChild(initContactPage());
 }
 
-function NavBarButtons(){
-  document.querySelector('#home').onclick = Home;
-  document.querySelector('#about').onclick = About;
-  document.querySelector('#contact').onclick = Contact;
-//  NavBar.homeTab.addEventListener("click", Home);
-//  NavBar.aboutTab.onclick = About;
-//  NavBar.contactTab.onclick = Contact;
-}
 
 Initialize();

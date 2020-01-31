@@ -46,9 +46,13 @@ nav{
   border-bottom: 2px solid #888;
   margin-bottom: 1em;
 }
+
 ul{
   margin: 0;
   overflow: hidden;
+}
+nav{
+  height: 60px;  
 }
 
 .mynav-item{
