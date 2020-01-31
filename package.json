@@ -1,0 +1,41 @@
+{
+  "name": "jsrestaurantpage",
+  "version": "1.0.0",
+  "description": "Restaurant Page using JS ES6, Microverse and Odin Project project",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aaron-RN/JS-Restaurant-Page.git"
+  },
+  "keywords": [
+    "javascript",
+    "restaurant",
+    "microverse",
+    "odinproject",
+    "odin",
+    "project"
+  ],
+  "author": "Aaron Rory Newbold",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aaron-RN/JS-Restaurant-Page/issues"
+  },
+  "homepage": "https://github.com/Aaron-RN/JS-Restaurant-Page#readme",
+  "devDependencies": {
+    "css-loader": "^3.4.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.0",
+    "file-loader": "^5.0.2",
+    "style-loader": "^1.1.3",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}
