@@ -1,10 +1,25 @@
+html { box-sizing: border-box; }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Used for Debugging purposes */
+* {
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+}
+
 h1{
   font-weight: bolder;  
 }
 
 .main-img{
   display: block;
-  width: 800px;
+  max-width: 800px;
   height: auto;
   text-align: center;
   margin: auto;
@@ -22,4 +37,33 @@ h1{
   font-size: 32px;
   color: #CCC;
   text-align: center;
+}
+
+nav{
+  list-style-type: none;
+  font-size: 26px;
+  color: #DDD;
+  border-bottom: 2px solid #888;
+  margin-bottom: 1em;
+}
+nav.ul{
+  margin: 0;
+}
+
+.mynav-item{
+  display: inline-block;
+  padding: 8px;
+  padding-bottom: 2px;
+  cursor: pointer;
+}
+.mynav-item:hover{
+  border: 1px solid #AAA;
+  border-bottom: none;
+}
+
+.active{
+  color: royalblue;
+  font-weight: bold;
+  border: 2px solid #666;
+  border-bottom: 0;
 }

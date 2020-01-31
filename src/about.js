@@ -1,20 +1,19 @@
-import './main.css';
-import bgIMG from './imgbg1.jpg';
+import aboutIMG from './about1.jpg';
 
-export function initializePage() {
+export function initAboutPage() {
   const contentDiv = document.createElement('div');
   contentDiv.setAttribute("id", "content");
   
   const header = document.createElement('h1');
   header.classList.add("text-center");
-  header.innerHTML = "Welcome To Ron De La McDons";
+  header.innerHTML = "About Us";
   
   const descBody = document.createElement('div');
   descBody.setAttribute("id", "desc");
 
   // Add the image to descBody div.
   const myIcon = new Image();
-  myIcon.src = bgIMG;
+  myIcon.src = aboutIMG;
   myIcon.classList.add("main-img");
   
   contentDiv.appendChild(header);
