@@ -1,8 +1,9 @@
 import _ from 'lodash';
+import './main.css';
 import {NavBar} from './nav.js';
 import {initHomePage} from './home.js';
 import {initAboutPage} from './about.js';
-import {initContact} from './contact.js';
+import {initContactPage} from './contact.js';
 
 function ClearBody(){
   let pageLoaded = document.querySelector("#content");
@@ -10,37 +11,41 @@ function ClearBody(){
   pageLoaded.parentNode.removeChild(pageLoaded);
 }
 
+function Initialize(){
+  NavBar.init();
+  document.body.appendChild(NavBar.getContent());
+  document.body.appendChild(initHomePage());
+  NavBarButtons();
+}
+
 function Home(){
   console.log("Home");
   ClearBody();
-  console.log(NavBar);
-  NavBar.init();
-  document.body.appendChild(NavBar.getContent());
-  console.log("initHomePage");
+  NavBar.setTab();
   document.body.appendChild(initHomePage());
 }
 
 function About(){
   console.log("ABout");
   ClearBody();
-  NavBar.init("about");
-//  document.body.appendChild(NavBar.getContent());
+  NavBar.setTab("about");
   document.body.appendChild(initAboutPage());
 }
 
 function Contact(){
   console.log("Contact");
   ClearBody();
-  NavBar.init("contact")
-//  document.body.appendChild(NavBar.getContent());
+  NavBar.setTab("contact")
   document.body.appendChild(initContactPage());
 }
 
 function NavBarButtons(){
-  NavBar.homeTab.addEventListener("click", Home);
-  NavBar.aboutTab.onclick = About;
-  NavBar.contactTab.onclick = Contact;
+  document.querySelector('#home').onclick = Home;
+  document.querySelector('#about').onclick = About;
+  document.querySelector('#contact').onclick = Contact;
+//  NavBar.homeTab.addEventListener("click", Home);
+//  NavBar.aboutTab.onclick = About;
+//  NavBar.contactTab.onclick = Contact;
 }
 
-Home();
-NavBarButtons();
+Initialize();

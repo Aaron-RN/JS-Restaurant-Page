@@ -46,19 +46,18 @@ nav{
   border-bottom: 2px solid #888;
   margin-bottom: 1em;
 }
-nav.ul{
+ul{
   margin: 0;
+  overflow: hidden;
 }
 
 .mynav-item{
   display: inline-block;
-  padding: 8px;
-  padding-bottom: 2px;
+  padding: 8px 8px 2px 8px;
   cursor: pointer;
 }
 .mynav-item:hover{
-  border: 1px solid #AAA;
-  border-bottom: none;
+  color: darkgoldenrod;
 }
 
 .active{
@@ -66,4 +65,5 @@ nav.ul{
   font-weight: bold;
   border: 2px solid #666;
   border-bottom: 0;
+  margin-bottom: 8px;
 }

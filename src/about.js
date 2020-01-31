@@ -19,7 +19,7 @@ export function initAboutPage() {
   contentDiv.appendChild(header);
   contentDiv.appendChild(descBody);
   descBody.appendChild(myIcon);
-  descBody.innerHTML+=`<p class='text-center mt-2'>Welcome Ron de la McDonalds, fancy huh?</p>
+  descBody.innerHTML+=`
     <p class="text-small">Bah duhp bup bup baahh, I'm Loving It!</p>
     <p class="text-smile">O__.__O</p>
     <p class="text-smile">\\_____/</p>`;
