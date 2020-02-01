@@ -6,9 +6,9 @@ const NavBar = (() => {
   let contact;
 
   const getContent = () => contentNav;
-  const homeTab = () => document.querySelector('#home');
-  const aboutTab = () => document.querySelector('#about');
-  const contactTab = () => document.querySelector('#contact');
+  const homeTab = (funct) => document.querySelector('#home').addEventListener('click', funct);
+  const aboutTab = (funct) => document.querySelector('#about').addEventListener('click', funct);
+  const contactTab = (funct) => document.querySelector('#contact').addEventListener('click', funct);
 
   const init = () => {
     contentNav = document.createElement('nav');

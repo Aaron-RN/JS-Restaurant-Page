@@ -10,20 +10,29 @@ function ClearBody() {
   pageLoaded.parentNode.removeChild(pageLoaded);
 }
 
-/* eslint-disable no-use-before-define */
-function NavBarButtons() {
-  document.querySelector('#home').onclick = Home;
-  document.querySelector('#about').onclick = About;
-  document.querySelector('#contact').onclick = Contact;
-  //  These lines below give invalid object error...
-  //  Assuming for some reason I can't access the NavBar variables from here.
-  //  ANY SUGGESTIONS?
+const Home = () => {
+  ClearBody();
+  NavBar.setTab();
+  document.body.appendChild(initHomePage());
+};
 
-//  NavBar.homeTab.addEventListener("click", Home);
-//  NavBar.aboutTab.onclick = About;
-//  NavBar.contactTab.onclick = Contact;
+const About = () => {
+  ClearBody();
+  NavBar.setTab('about');
+  document.body.appendChild(initAboutPage());
+};
+
+const Contact = () => {
+  ClearBody();
+  NavBar.setTab('contact');
+  document.body.appendChild(initContactPage());
+};
+
+function NavBarButtons() {
+  NavBar.homeTab(Home);
+  NavBar.aboutTab(About);
+  NavBar.contactTab(Contact);
 }
-/* eslint-enable no-use-before-define */
 
 function Initialize() {
   NavBar.init();
@@ -31,24 +40,5 @@ function Initialize() {
   document.body.appendChild(initHomePage());
   NavBarButtons();
 }
-
-function Home() {
-  ClearBody();
-  NavBar.setTab();
-  document.body.appendChild(initHomePage());
-}
-
-function About() {
-  ClearBody();
-  NavBar.setTab('about');
-  document.body.appendChild(initAboutPage());
-}
-
-function Contact() {
-  ClearBody();
-  NavBar.setTab('contact');
-  document.body.appendChild(initContactPage());
-}
-
 
 Initialize();
