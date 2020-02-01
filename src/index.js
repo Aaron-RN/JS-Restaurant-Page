@@ -1,20 +1,44 @@
-import _ from 'lodash';
 import './main.css';
-import Icon from './graph.png';
+import NavBar from './nav';
+import initHomePage from './home';
+import initAboutPage from './about';
+import initContactPage from './contact';
 
-function component() {
-  const element = document.createElement('div');
-
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
-  
-  // Add the image to our existing div.
-  const myIcon = new Image();
-  myIcon.src = Icon;
-
-  element.appendChild(myIcon);
-  
-  return element;
+function ClearBody() {
+  const pageLoaded = document.querySelector('#content');
+  if (!pageLoaded) { return; }
+  pageLoaded.parentNode.removeChild(pageLoaded);
 }
 
-document.body.appendChild(component());
+const Home = () => {
+  ClearBody();
+  NavBar.setTab();
+  document.body.appendChild(initHomePage());
+};
+
+const About = () => {
+  ClearBody();
+  NavBar.setTab('about');
+  document.body.appendChild(initAboutPage());
+};
+
+const Contact = () => {
+  ClearBody();
+  NavBar.setTab('contact');
+  document.body.appendChild(initContactPage());
+};
+
+function NavBarButtons() {
+  NavBar.homeTab(Home);
+  NavBar.aboutTab(About);
+  NavBar.contactTab(Contact);
+}
+
+function Initialize() {
+  NavBar.init();
+  document.body.appendChild(NavBar.getContent());
+  document.body.appendChild(initHomePage());
+  NavBarButtons();
+}
+
+Initialize();
