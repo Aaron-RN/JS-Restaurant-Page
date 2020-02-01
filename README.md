@@ -4,7 +4,7 @@ The main goal of this project is for the student to show the understanding of th
 ![screenshot](./screenshot.png)
 
 ## Live Link
-Live Githack Link: https://raw.githack.com/Aaron-RN/JS-Restaurant-Page/basic-page/dist/index.html
+Live Githack Link: https://raw.githack.com/Aaron-RN/JS-Restaurant-Page/master/dist/index.html
 
 ## Built With
 
