@@ -10,7 +10,8 @@ Live Githack Link: https://raw.githack.com/Aaron-RN/JS-Restaurant-Page/developme
 
 - HTML, CSS, Bootstrap
 - JavaScript
-- Webpack
+- Node.js 
+- NPM Webpack
 
 ## Authors
 
