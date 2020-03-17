@@ -3,14 +3,12 @@ The main goal of this project is for the student to show the understanding of th
 
 ![screenshot](./screenshot.png)
 
-## Live Link
-Live Githack Link: https://raw.githack.com/Aaron-RN/JS-Restaurant-Page/development/dist/index.html
+## [Live Link](https://raw.githack.com/Aaron-RN/JS-Restaurant-Page/development/dist/index.html)
 
 ## Built With
 
 - HTML, CSS, Bootstrap
 - JavaScript
-- Node.js 
 - NPM Webpack
 
 ## Authors
